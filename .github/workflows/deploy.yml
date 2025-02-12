@@ -1,0 +1,30 @@
+name: Deploy
+on:
+  workflow_run:
+    branches:
+      - main
+    workflows:
+      - CI
+    types:
+      - completed
+concurrency:
+  group: production
+jobs:
+  kamal:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    environment: production
+    env:
+      KAMAL_REGISTRY_PASSWORD: ${{ secrets.KAMAL_REGISTRY_PASSWORD }}
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+      SSH_KNOWN_HOSTS: ${{ secrets.KNOWN_HOSTS }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.KAMAL_DEPLOY_PRIVATE_KEY }}
+      - run: mkdir -p ~/.ssh/ && echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+      - run: bundle exec kamal deploy --version=$GITHUB_SHA
