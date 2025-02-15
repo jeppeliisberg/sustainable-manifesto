@@ -11,4 +11,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "application#index"
+
+  get "reflection" => "application#reflection"
+  get "inclusivity" => "application#inclusivity"
+  get "empowerment" => "application#empowerment"
+  get "privacy" => "application#privacy"
+  get "transparency" => "application#transparency"
+  get "climate" => "application#climate"
+  get "shared-value" => "application#shared_value"
 end
