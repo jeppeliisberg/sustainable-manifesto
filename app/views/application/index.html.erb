@@ -2,32 +2,29 @@
 <%= content_for :page_description do "We—developers, designers, and entrepreneurs—shape the world through software. Prioritizing sustainability, inclusivity, and ethics is key to a just and resilient future." end %>
 <%= content_for :page_image do asset_url("sustainable-manifesto-illustration.jpg") end %>
 
-<div class="px-6 py-8 lg:px-8">
-  <div class="mx-auto max-w-3xl text-base/7 text-gray-700 dark:text-gray-400">
-    <section class="max-w-2xl shadow-md rounded-lg p-6 border border-gray-200 dark:border-gray-600">
-        <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-300">Sustainability</h2>
-        <p class="text-sm italic text-gray-600 dark:text-gray-500 mt-1">
-            from
-            <a href="https://en.wiktionary.org/wiki/sustainability"
-               class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800"
-               target="_blank" rel="noopener noreferrer">
-               Wiktionary</a>, Creative Commons Attribution/Share-Alike License.
-        </p>
-        <dl class="mt-4">
-            <dt class="text-lg font-medium italic text-gray-800 dark:text-gray-300">Noun</dt>
-            <dd class="mt-2 text-gray-700 dark:text-gray-400">
-                A means of configuring civilization and human activity so that society, its members and its economies are able to meet their needs and express their greatest potential in the present, while preserving biodiversity and natural ecosystems, planning and acting for the ability to maintain these ideals for future generations.
-            </dd>
-        </dl>
-    </section>
-  </div>
-</div>
-
 <div class="px-6 py-16 lg:px-8">
   <div class="mx-auto max-w-3xl text-base/7 text-gray-700 dark:text-gray-400">
     <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 dark:text-gray-300 sm:text-5xl">Manifesto for Sustainable Software Design</h1>
     <p class="mt-6 text-xl/8">In an increasingly interconnected digital world, software shapes societies, influences behaviors, and transforms economies. As designers, developers, and entrepreneurs of platforms and systems for communication, collaboration, and social interaction, we bear a responsibility to prioritize sustainability — not only in terms of ecological impact but also in inclusivity, ethics, and the long-term resilience of the digital systems we create.</p>
     <div class="mt-10 max-w-2xl">
+      <div class="py-8">
+        <section class="max-w-2xl shadow-md rounded-lg p-6 border border-gray-200 dark:border-gray-600">
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-gray-300">Sustainability</h2>
+            <p class="text-sm italic text-gray-600 dark:text-gray-500 mt-1">
+                from
+                <a href="https://en.wiktionary.org/wiki/sustainability"
+                  class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800"
+                  target="_blank" rel="noopener noreferrer">
+                  Wiktionary</a>, Creative Commons Attribution/Share-Alike License.
+            </p>
+            <dl class="mt-4">
+                <dt class="text-lg font-medium italic text-gray-800 dark:text-gray-300">Noun</dt>
+                <dd class="mt-2 text-gray-700 dark:text-gray-400">
+                    A means of configuring civilization and human activity so that society, its members and its economies are able to meet their needs and express their greatest potential in the present, while preserving biodiversity and natural ecosystems, planning and acting for the ability to maintain these ideals for future generations.
+                </dd>
+            </dl>
+        </section>
+      </div>
       <%= render "work_in_progress" %>
       <p class="mt-8">This manifesto presents principles to guide software development toward a future where technology serves the needs of society, humanity, and the planet. Through our work, we strive to uphold these values:</p>
       <ul role="list" class="mt-8 max-w-xl space-y-8 text-gray-600 dark:text-gray-400">
@@ -35,43 +32,43 @@
           <svg class="mt-1 size-5 flex-none text-teal-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/reflection" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Reflection over Reaction</a></strong> – Thoughtful design should discourage the hunt for external validation and instead promote reflective, meaningful engagement.</span>
+          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/reflection" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Reflection before Reaction</a></strong> – Thoughtful design should discourage the hunt for external validation and instead promote reflective, meaningful engagement.</span>
         </li>
         <li class="flex gap-x-3">
           <svg class="mt-1 size-5 flex-none text-teal-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/inclusivity" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Inclusivity over Simplicity</a></strong> – Software should go beyond providing accessibility features and consider how to actively include marginalized groups.</span>
+          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/inclusivity" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Inclusivity before Simplicity</a></strong> – Software should go beyond providing accessibility features and consider how to actively include marginalized groups.</span>
         </li>
         <li class="flex gap-x-3">
           <svg class="mt-1 size-5 flex-none text-teal-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/empowerment" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Empowerment over Convenience</a></strong> – Users should retain control over their data, tools, and choices, rather than being locked into vendor-controlled ecosystems for the sake of ease.</span>
+          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/empowerment" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Empowerment before Convenience</a></strong> – Users should retain control over their data, tools, and choices, rather than being locked into vendor-controlled ecosystems for the sake of ease.</span>
         </li>
         <li class="flex gap-x-3">
           <svg class="mt-1 size-5 flex-none text-teal-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/privacy" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Privacy over Personalization</a></strong> – Personalization should never come at the expense of user privacy, requiring ethical data practices that minimize surveillance and maximize trust.</span>
+          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/privacy" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Privacy before Personalization</a></strong> – Personalization should never come at the expense of user privacy, requiring ethical data practices that minimize surveillance and maximize trust.</span>
         </li>
         <li class="flex gap-x-3">
           <svg class="mt-1 size-5 flex-none text-teal-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/transparency" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Transparency over Algorithms</a></strong> – Users deserve to understand how algorithms influence their digital experiences, ensuring fairness, accountability, and informed decision-making.</span>
+          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/transparency" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Transparency before Algorithms</a></strong> – Users deserve to understand how algorithms influence their digital experiences, ensuring fairness, accountability, and informed decision-making.</span>
         </li>
         <li class="flex gap-x-3">
           <svg class="mt-1 size-5 flex-none text-teal-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/climate" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Climate over Speed</a></strong> – Software development should prioritize sustainability, optimizing for energy efficiency and hardware compatibility rather than racing toward rapid iteration.</span>
+          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/climate" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Climate before Speed</a></strong> – Software development should prioritize sustainability, optimizing for energy efficiency and hardware compatibility rather than racing toward rapid iteration.</span>
         </li>
         <li class="flex gap-x-3">
           <svg class="mt-1 size-5 flex-none text-teal-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
             <path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd" />
           </svg>
-          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/shared-value" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Shared Value over Shareholder Value</a></strong> – Companies should adopt governance models that reflect user interests to avoid entshittification and exclusively serving shareholder profits.</span>
+          <span><strong class="font-semibold text-gray-900 dark:text-gray-300"><a href="/shared-value" class="text-teal-600 font-semibold underline decoration-dotted focus:ring-2 rounded focus:ring-teal-300 active:text-teal-800">Shared Value before Shareholder Value</a></strong> – Companies should adopt governance models that reflect user interests to avoid entshittification and exclusively serving shareholder profits.</span>
         </li>
       </ul>
       <p class="mt-8">While there is value in the items on the right, we believe the items on the left must take precedence.</p>
