@@ -6,7 +6,7 @@ Software shapes the world we live in. It powers communication, education, commer
 
 The systems we create are never neutral. They can magnify harm, or they can strengthen the foundations of a just and sustainable society. How we build today shapes what becomes possible tomorrow.  
 
-This manifesto is our commitment to the latter. It calls on creators, maintainers, organisations, and citizens to align digital systems with the needs of a thriving world. Sustainable software is not a luxury — it is essential to our shared future.  
+This manifesto is our commitment to the latter. It calls on creators, maintainers, organizations, and citizens to align digital systems with the needs of a thriving world. Sustainable software is not a luxury — it is essential to our shared future.  
 
 ## Principles
 
@@ -32,7 +32,7 @@ Attention is precious. We reject manipulative patterns that exploit it, and crea
 
 ### Openness and resilience
 
-Open standards and interoperable protocols strengthen systems. Decentralisation and redundancy ensure they endure disruptions. Together, openness and resilience make technology more just and future-proof.  
+Open standards and interoperable protocols strengthen systems. Decentralization and redundancy ensure they endure disruptions. Together, openness and resilience make technology more just and future-proof.  
 
 ### Algorithm transparency and accountability
 
@@ -48,4 +48,4 @@ Sustainability is never finished. We publish goals, measure impact, invite criti
 
 ### Governance for the common good
 
-Decision-making belongs to those most affected. We practise participatory governance and stewardship that prioritises collective wellbeing over short-term gain.   
+Decision-making belongs to those most affected. We practice participatory governance and stewardship that prioritizes collective wellbeing over short-term gain.
