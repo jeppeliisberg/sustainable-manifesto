@@ -10,46 +10,47 @@ This manifesto is our commitment to the latter. It calls on creators, maintainer
 
 ## Principles
 
-### We commit to longevity and efficiency
+### Longevity and efficiency
 
 Software endures when it works across generations of devices, avoids excess, and wastes no resources. Longevity reduces e-waste and exclusion, widening access while lightening the planet’s load.  
 
-### We commit to lowering environmental impact
+### Lower environmental impact
 
 Energy, carbon, and material footprints are part of every technical choice. Our work reduces harm and aligns digital systems with the needs of a living planet.  
 
-### We commit to privacy and data sovereignty
+### Privacy and data sovereignty
 
 Data belongs to people. We collect less, return control, and guarantee the right to move, delete, or protect personal information.  
 
-### We commit to inclusion and literacy
+### Inclusion and literacy
 
 Technology welcomes everyone when it is accessible, multilingual, and usable in low-bandwidth or constrained contexts. We also share knowledge openly, building awareness of impacts so people can choose wisely.  
 
-### We commit to human wellbeing
+### Human wellbeing
 
 Attention is precious. We reject manipulative patterns that exploit it, and create experiences that cultivate trust, reflection, and meaningful engagement.  
 
-### We commit to openness and resilience
+### Openness and resilience
 
 Open standards and interoperable protocols strengthen systems. Decentralisation and redundancy ensure they endure disruptions. Together, openness and resilience make technology more just and future-proof.  
 
-### We commit to transparency and accountability in algorithms
+### Algorithm transparency and accountability
 
 Automated systems influence decisions, opportunities, and perspectives. They are understandable, open to scrutiny, and responsive when challenged.  
 
-### We commit to fairness in labour and value
+### Fairness in labour and value
 
 Technology is sustained by people. We uphold fair pay, safe working conditions, and models that distribute benefits instead of extracting them.  
 
-### We commit to transparency and iteration
+### Transparency and iteration
 
 Sustainability is never finished. We publish goals, measure impact, invite critique, and evolve with our communities.  
 
-### We commit to governance for the common good.
+### Governance for the common good
+
 Decision-making belongs to those most affected. We practise participatory governance and stewardship that prioritises collective wellbeing over short-term gain.  
 
-## How to Sign
+## How to sign
 
 This manifesto is open to individuals, teams, and organisations. Signing is a public pledge: a statement of intent to align your work with these commitments.  
 
