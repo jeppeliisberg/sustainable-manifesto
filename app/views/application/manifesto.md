@@ -38,9 +38,9 @@ Open standards and interoperable protocols strengthen systems. Decentralization 
 
 Automated systems influence decisions, opportunities, and perspectives. They are understandable, open to scrutiny, and responsive when challenged.  
 
-### Fairness in labour and value
+### Fair work and fair economy
 
-Technology is sustained by people. We uphold fair pay, safe working conditions, and models that distribute benefits instead of extracting them.  
+Technology does not stand apart from the economy that supports it. We uphold fair labour practices and revenue models that reward contributors, sustain communities, and avoid exploitation. A just digital economy is part of true sustainability.
 
 ### Transparency and iteration
 
