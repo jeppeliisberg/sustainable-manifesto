@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
 
-  # Require browser support for ES Modules, which is the foundation for import maps.
-  # This is less strict than :modern but ensures all interactive features will work.
-  allow_browser versions: :es6
+  # Require browser support for import maps, which is the foundation for our JavaScript architecture.
+  # These are the minimum versions that support import maps natively.
+  allow_browser versions: { safari: 16.4, chrome: 89, firefox: 109, opera: 75, ie: false }
 
   def index
   end
