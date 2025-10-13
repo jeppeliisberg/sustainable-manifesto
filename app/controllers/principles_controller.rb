@@ -1,6 +1,20 @@
 class PrinciplesController < ApplicationController
   caches_page :show
 
+  # Define the order of principles to match the homepage
+  PRINCIPLE_ORDER = %w[
+    lower-environmental-impact
+    enduring-design
+    human-wellbeing
+    inclusive-creation
+    data-sovereignity
+    transparent-algorithms
+    fair-labor
+    open-infrastructure
+    collaborative-development
+    governance-for-the-common-good
+  ].freeze
+
   def show
     @principle_id = params[:id]
     @content = load_principle_content(@principle_id)
@@ -13,6 +27,13 @@ class PrinciplesController < ApplicationController
     # Parse title from first line (expecting "# Title")
     @title = extract_title(@content)
     @description = extract_description(@content)
+
+    # Add navigation logic for next/previous principles
+    current_index = PRINCIPLE_ORDER.index(@principle_id)
+    if current_index
+      @previous_principle_id = PRINCIPLE_ORDER[current_index - 1] if current_index > 0
+      @next_principle_id = PRINCIPLE_ORDER[current_index + 1]
+    end
 
     # Render markdown to HTML
     @html_content = render_markdown(@content)

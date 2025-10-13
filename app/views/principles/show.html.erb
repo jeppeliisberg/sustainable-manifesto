@@ -13,5 +13,20 @@
         <span aria-hidden="true">←</span> Back to Manifesto
       <% end %>
     </div>
+    <div class="mt-10 flex items-center justify-between gap-x-6">
+      <% if @previous_principle_id %>
+        <%= link_to principle_path(@previous_principle_id), class: "text-sm/6 font-semibold text-gray-900 dark:text-gray-200" do %>
+          <span aria-hidden="true">←</span> Previous Principle
+        <% end %>
+      <% else %>
+        <span></span>
+      <% end %>
+
+      <% if @next_principle_id %>
+        <%= link_to principle_path(@next_principle_id), class: "text-sm/6 font-semibold text-gray-900 dark:text-gray-200" do %>
+          Next Principle <span aria-hidden="true">→</span>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
