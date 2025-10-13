@@ -32,9 +32,9 @@ Data is not a resource to be mined. It represents people’s lives and choice an
 
 Algorithms influence opportunity, representation, and truth. Their impact must be understandable and open to challenge. Keeping algorithms transparent means taking responsibility for how automated systems shape society, while clarity ensures that people can grasp and question the reasoning behind decisions that affect them.
 
-### Fair labour
+### Fair labor
 
-Technology does not stand apart from the economy that supports it. Sustainable systems depend on fair labour, ethical business models, and shared value creation. A just digital economy is one where those who contribute are recognized and rewarded.
+Technology does not stand apart from the economy that supports it. Sustainable systems depend on fair labor, ethical business models, and shared value creation. A just digital economy is one where those who contribute are recognized and rewarded.
 
 ### Open infrastructure
 
