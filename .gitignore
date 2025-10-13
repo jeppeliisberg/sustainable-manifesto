@@ -37,3 +37,9 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# generated context for AI architects
+/gemini_context.sh
+
+# Git worktrees
+.worktrees/
