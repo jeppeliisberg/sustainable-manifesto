@@ -17,6 +17,9 @@
               Email Address
             </label>
             <%= f.email_field :email, required: true, class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent", placeholder: "your@email.com" %>
+            <p class="mt-2 text-xs text-gray-500">
+              Your email is encrypted and only used for verification. It will not be displayed publicly or shared.
+            </p>
           </div>
 
           <div class="mb-4" data-controller="turnstile">
