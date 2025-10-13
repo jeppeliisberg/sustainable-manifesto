@@ -1,5 +1,5 @@
 class SignatureMailer < ApplicationMailer
-  default from: "noreply@sustainablemanifesto.org"
+  default from: "jeppe@sustainablemanifesto.org"
 
   def send_confirmation_code(signature)
     @signature = signature
