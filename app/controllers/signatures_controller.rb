@@ -82,15 +82,29 @@ class SignaturesController < ApplicationController
       return
     end
 
+    # Store the current step before updating
+    current_step_before_update = determine_current_step(@signature)
+
     if @signature.update(update_signature_params)
-      # Check if all required fields are filled
-      if signature_complete?(@signature)
+      # Special handling: if this was the individual details step, we're done
+      # (all individual fields are optional, so any submission completes the flow)
+      if current_step_before_update == :individual_details
         render :success
-      else
+        return
+      end
+
+      # For other steps, check if we need to show another step
+      current_step_after_update = determine_current_step(@signature)
+
+      # If we're still on a step (not complete), redirect back to continue the flow
+      if current_step_after_update != :complete
         redirect_to edit_signature_path(@signature)
+      else
+        # All required steps complete, show success
+        render :success
       end
     else
-      @current_step = determine_current_step(@signature)
+      @current_step = current_step_before_update
       render :edit, status: :unprocessable_entity
     end
   end
@@ -133,31 +147,15 @@ class SignaturesController < ApplicationController
   def determine_current_step(signature)
     return :name if signature.name.blank?
     return :signature_type if signature.signature_type.nil?
-    return :individual_details if signature.individual? && signature_incomplete_individual?(signature)
+    # For individuals, always show details step (fields are optional)
+    # For organizations, show details step until required fields are filled
+    return :individual_details if signature.individual?
     return :organization_details if signature.organization? && signature_incomplete_organization?(signature)
     :complete
-  end
-
-  def signature_incomplete_individual?(signature)
-    # For individuals, all fields are optional after name and type
-    false
   end
 
   def signature_incomplete_organization?(signature)
     # For organizations, require organization name and profile URL
     signature.organization.blank? || signature.profile_url.blank?
-  end
-
-  def signature_complete?(signature)
-    return false if signature.name.blank?
-    return false if signature.signature_type.nil?
-
-    if signature.individual?
-      # For individuals, name and type are sufficient
-      true
-    else
-      # For organizations, require organization name and profile URL
-      signature.organization.present? && signature.profile_url.present?
-    end
   end
 end
