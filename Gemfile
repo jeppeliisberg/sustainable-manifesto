@@ -22,6 +22,10 @@ gem "redcarpet"
 gem "actionpack-page_caching"
 # Postmark for transactional emails [https://postmarkapp.com/developer/integration/rails]
 gem "postmark-rails"
+# Rate limiting and request throttling [https://github.com/rack/rack-attack]
+gem "rack-attack"
+# Pagination [https://github.com/ddnexus/pagy]
+gem "pagy"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -66,6 +70,10 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  # HTTP request stubbing [https://github.com/bblimke/webmock]
+  gem "webmock"
+  # Mocking and stubbing [https://github.com/freerange/mocha]
+  gem "mocha"
 end
 
 gem "tailwindcss-rails", "~> 4.0"

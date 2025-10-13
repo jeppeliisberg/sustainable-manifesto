@@ -1,0 +1,35 @@
+<h2 class="text-2xl font-bold text-gray-900 mb-6">Are you signing as an individual or organization?</h2>
+
+<% if signature.errors.any? %>
+  <div class="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+    <p class="text-red-800 font-medium"><%= signature.errors.full_messages.first %></p>
+  </div>
+<% end %>
+
+<%= form_with model: signature, url: signature_path(signature), method: :patch, data: { turbo_frame: "signature_form" } do |f| %>
+  <div class="space-y-4 mb-6">
+    <label class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-teal-500 transition-colors">
+      <%= f.radio_button :signature_type, "individual", class: "w-4 h-4 text-teal-600 focus:ring-teal-500", checked: signature.individual? %>
+      <span class="ml-3">
+        <span class="block text-lg font-medium text-gray-900">Individual</span>
+        <span class="block text-sm text-gray-600">I'm signing as myself</span>
+      </span>
+    </label>
+
+    <label class="flex items-center p-4 border-2 border-gray-300 rounded-lg cursor-pointer hover:border-teal-500 transition-colors">
+      <%= f.radio_button :signature_type, "organization", class: "w-4 h-4 text-teal-600 focus:ring-teal-500", checked: signature.organization? %>
+      <span class="ml-3">
+        <span class="block text-lg font-medium text-gray-900">Organization</span>
+        <span class="block text-sm text-gray-600">I'm signing on behalf of my organization</span>
+      </span>
+    </label>
+  </div>
+
+  <div class="mb-4">
+    <%= f.submit "Continue", class: "bg-teal-600 text-white px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors w-full cursor-pointer text-center" %>
+  </div>
+<% end %>
+
+<div class="text-center">
+  <%= link_to "Go back", root_path, class: "text-sm text-gray-600 hover:text-gray-800", data: { turbo_frame: "_top" } %>
+</div>

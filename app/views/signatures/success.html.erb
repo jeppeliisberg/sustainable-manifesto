@@ -1,0 +1,24 @@
+<%= turbo_frame_tag "signature_form" do %>
+  <div class="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto text-center">
+    <div class="mb-6">
+      <svg class="w-16 h-16 text-teal-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+    </div>
+
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">Thank you for signing!</h2>
+
+    <p class="text-lg text-gray-600 mb-6">
+      Your signature has been added to the Sustainable Software Manifesto.
+    </p>
+
+    <p class="text-gray-600 mb-8">
+      Together, we're building a better future through sustainable software development.
+    </p>
+
+    <div class="space-y-3">
+      <%= link_to "View the Manifesto", root_path, class: "block bg-teal-600 text-white px-6 py-3 rounded-lg hover:bg-teal-700 transition-colors text-center", data: { turbo_frame: "_top" } %>
+      <%= link_to "Share on Social Media", "#", class: "block text-teal-600 hover:text-teal-700 transition-colors text-center" %>
+    </div>
+  </div>
+<% end %>

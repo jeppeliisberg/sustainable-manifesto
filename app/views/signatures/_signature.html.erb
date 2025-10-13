@@ -1,0 +1,54 @@
+<div class="flex items-start gap-x-4 rounded-lg p-4 ring-1 ring-gray-200 dark:ring-gray-800">
+  <div class="shrink-0 pt-1">
+    <% if signature.organization? %>
+      <!-- Building/Organization icon -->
+      <svg class="size-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z" />
+      </svg>
+    <% else %>
+      <!-- User/Individual icon -->
+      <svg class="size-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+      </svg>
+    <% end %>
+  </div>
+  <div class="min-w-0 flex-1">
+    <% if signature.organization? %>
+      <% if signature.profile_url.present? %>
+        <a href="<%= signature.profile_url %>" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-gray-900 dark:text-gray-200 hover:underline focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 rounded">
+          <%= signature.organization %>
+        </a>
+      <% else %>
+        <p class="text-lg font-semibold text-gray-900 dark:text-gray-200">
+          <%= signature.organization %>
+        </p>
+      <% end %>
+      <p class="text-sm text-gray-600 dark:text-gray-400">
+        by <%= signature.name %><%= ", #{signature.title}" if signature.title.present? %>
+      </p>
+    <% else %>
+      <% if signature.profile_url.present? %>
+        <a href="<%= signature.profile_url %>" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-gray-900 dark:text-gray-200 hover:underline focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 rounded">
+          <%= signature.name %>
+        </a>
+      <% else %>
+        <p class="text-lg font-semibold text-gray-900 dark:text-gray-200">
+          <%= signature.name %>
+        </p>
+      <% end %>
+      <% if signature.title.present? && signature.organization.present? %>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          <%= signature.title %> at <%= signature.organization %>
+        </p>
+      <% elsif signature.title.present? %>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          <%= signature.title %>
+        </p>
+      <% elsif signature.organization.present? %>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          <%= signature.organization %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

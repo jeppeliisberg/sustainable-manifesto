@@ -8,6 +8,7 @@
       <%= @html_content.html_safe %>
     </div>
     <div class="mt-10 flex items-center gap-x-6">
+      <%= link_to "Sign the Manifesto", sign_path, class: "rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-gray-200 shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600" %>
       <%= link_to root_path, class: "text-sm/6 font-semibold text-gray-900 dark:text-gray-200" do %>
         <span aria-hidden="true">←</span> Back to Manifesto
       <% end %>
