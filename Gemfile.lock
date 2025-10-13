@@ -31,6 +31,8 @@ GEM
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
       useragent (~> 0.16)
+    actionpack-page_caching (1.2.4)
+      actionpack (>= 4.0.0)
     actiontext (8.0.3)
       actionpack (= 8.0.3)
       activerecord (= 8.0.3)
@@ -253,6 +255,7 @@ GEM
       erb
       psych (>= 4.0.0)
       tsort
+    redcarpet (3.6.1)
     regexp_parser (2.11.3)
     reline (0.6.2)
       io-console (~> 0.5)
@@ -385,6 +388,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  actionpack-page_caching
   bootsnap
   brakeman
   capybara
@@ -395,6 +399,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
+  redcarpet
   rubocop-rails-omakase
   selenium-webdriver
   solid_cable
