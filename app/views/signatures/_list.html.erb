@@ -1,0 +1,9 @@
+<%= render @signatures %>
+
+<%= turbo_frame_tag "pagination", data: { controller: "infinite-scroll" } do %>
+  <% if @pagy.next %>
+    <div class="mt-6 text-center">
+      <%= link_to "Load more", signatures_path(page: @pagy.next), class: "pagy-nav", data: { turbo_frame: "pagination", turbo_action: "advance" }, rel: "next" %>
+    </div>
+  <% end %>
+<% end %>

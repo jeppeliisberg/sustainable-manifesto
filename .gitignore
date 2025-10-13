@@ -43,3 +43,9 @@
 
 # Git worktrees
 .worktrees/
+
+/config/credentials/test.key
+
+/config/credentials/development.key
+
+/config/credentials/production.key

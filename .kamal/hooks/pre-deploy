@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+# This hook runs before each deploy
+# It creates a backup of the SQLite database on the Hetzner server
+# Backups are stored in /root/db_backups/ on the server
+
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+SERVER="root@159.69.159.73"
+BACKUP_DIR="/root/db_backups"
+
+echo "📦 Creating pre-deploy database backup..."
+
+# Create backup directory on server if it doesn't exist
+ssh $SERVER "mkdir -p $BACKUP_DIR"
+
+# Create backup on the server (extracts SQLite files from Docker volume)
+ssh $SERVER "docker run --rm -v sustainable_manifesto_storage:/data -v $BACKUP_DIR:/backup alpine tar czf /backup/db_backup_$TIMESTAMP.tar.gz -C /data ."
+
+echo "✅ Backup saved on server: $BACKUP_DIR/db_backup_$TIMESTAMP.tar.gz"
+
+# Optional: Keep only last 10 backups on the server to save space
+ssh $SERVER "cd $BACKUP_DIR && ls -t db_backup_*.tar.gz | tail -n +11 | xargs rm -f"
+
+echo "🗑️  Cleaned up old backups (keeping last 10)"

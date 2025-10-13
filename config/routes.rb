@@ -26,4 +26,14 @@ Rails.application.routes.draw do
 
   # Dynamic principle pages
   get "principles/:id", to: "principles#show", as: :principle
+
+  # Signature collection routes - main entry at /sign
+  get "sign", to: "signatures#new", as: :sign
+  resources :signatures, only: [ :index, :create, :edit, :update ] do
+    collection do
+      get :verify
+      post :confirm
+      get :resend_code
+    end
+  end
 end
