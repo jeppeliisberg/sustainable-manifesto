@@ -8,3 +8,8 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+/* Markdown content styling - fallback for any elements not styled by renderer */
+.principle-content strong {
+  @apply font-semibold text-gray-900 dark:text-gray-300;
+}
