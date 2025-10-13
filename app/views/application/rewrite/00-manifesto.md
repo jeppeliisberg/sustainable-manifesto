@@ -28,9 +28,9 @@ Technology serves humanity best when it welcomes everyone. Inclusive systems ada
 
 Data is not a resource to be mined. It represents people’s lives and choice and, as such, it belongs to them. Respecting privacy means respecting autonomy and trust. Sustainable systems give individuals real control over their data and minimize what is collected in the first place.
 
-### Accountable algorithms
+### Transparent algorithms
 
-Algorithms influence opportunity, representation, and truth. Their impact must be understandable and open to challenge. Accountability means taking responsibility for how automated systems shape society, while clarity ensures that people can grasp and question the reasoning behind decisions that affect them.
+Algorithms influence opportunity, representation, and truth. Their impact must be understandable and open to challenge. Keeping algorithms transparent means taking responsibility for how automated systems shape society, while clarity ensures that people can grasp and question the reasoning behind decisions that affect them.
 
 ### Fair labour
 
@@ -40,7 +40,7 @@ Technology does not stand apart from the economy that supports it. Sustainable s
 
 Open systems are adaptable systems. They invite participation, foster transparency, and distribute power. Resilience ensures that these systems can endure technical, social, or environmental shocks without breaking trust or continuity.
 
-### Transparent development
+### Collaborative development
 
 Sustainability is a process, not a destination. Transparent practices allow communities to see progress, question assumptions, and contribute to continuous improvement. Iteration ensures that our systems can evolve alongside our understanding.
 
