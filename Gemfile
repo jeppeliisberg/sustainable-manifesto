@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.1"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
-# Use sqlite3 as the database for Active Record
+# Use SQLite as the database for Active Record
 gem "sqlite3", ">= 2.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -20,6 +20,8 @@ gem "jbuilder"
 gem "redcarpet"
 # Page caching [https://github.com/rails/actionpack-page_caching]
 gem "actionpack-page_caching"
+# Postmark for transactional emails [https://postmarkapp.com/developer/integration/rails]
+gem "postmark-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
