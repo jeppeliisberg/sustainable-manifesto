@@ -1,6 +1,6 @@
 # Open infrastructure
 
-Open systems are adaptable systems. They invite participation, foster transparency, and distribute power. Resilience ensures that these systems can endure shocks — technical, social, or environmental — without breaking trust or continuity.
+Open systems are adaptable systems. They invite participation, foster transparency, and distribute power. Resilience ensures that these systems can endure technical, social, or environmental shocks without breaking trust or continuity.
 
 Open infrastructure comes to life when we:
 

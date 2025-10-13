@@ -4,7 +4,7 @@ Software shapes the world we live in. It powers communication, education, commer
 
 The systems we create are never neutral. They can magnify harm, or they can strengthen the foundations of a just and sustainable society. How we build today shapes what becomes possible tomorrow.
 
-This manifesto is our commitment to the latter. It calls on creators, maintainers, organizations, and citizens to align digital systems with the needs of a thriving world. Sustainable software is not a luxury — it is essential to our shared future.
+This manifesto is our commitment to the latter. It calls on creators, maintainers, organizations, and citizens to align digital systems with the needs of a thriving world. Sustainable software is not a luxury, but an essential part of our shared future.
 
 ## Principles
 
@@ -14,7 +14,7 @@ Every line of code has a footprint. The energy we consume, the servers we power,
 
 ### Enduring design
 
-Software that endures helps both people and the planet. When systems are designed to last, they reduce exclusion, limit waste, and remain usable across devices and contexts. Efficiency ensures that resources — from energy to attention — are not squandered.
+Software that endures helps both people and the planet. When systems are designed to last, they reduce exclusion, limit waste, and remain usable across devices and contexts. Efficiency ensures that resources, like energy and attention, are not squandered.
 
 ### Human wellbeing
 
@@ -26,9 +26,9 @@ Technology serves humanity best when it welcomes everyone. Inclusive systems ada
 
 ### Data sovereignty
 
-Data is not a resource to be mined — it is a trace of people’s lives. Respecting privacy means respecting autonomy and trust. Sustainable systems give individuals real control over their data and minimize what is collected in the first place.
+Data is not a resource to be mined. It represents people’s lives and choice and, as such, it belongs to them. Respecting privacy means respecting autonomy and trust. Sustainable systems give individuals real control over their data and minimize what is collected in the first place.
 
-### Transparent algorithms
+### Accountable algorithms
 
 Algorithms influence opportunity, representation, and truth. Their impact must be understandable and open to challenge. Accountability means taking responsibility for how automated systems shape society, while clarity ensures that people can grasp and question the reasoning behind decisions that affect them.
 
@@ -38,7 +38,7 @@ Technology does not stand apart from the economy that supports it. Sustainable s
 
 ### Open infrastructure
 
-Open systems are adaptable systems. They invite participation, foster transparency, and distribute power. Resilience ensures that these systems can endure shocks — technical, social, or environmental — without breaking trust or continuity.
+Open systems are adaptable systems. They invite participation, foster transparency, and distribute power. Resilience ensures that these systems can endure technical, social, or environmental shocks without breaking trust or continuity.
 
 ### Transparent development
 

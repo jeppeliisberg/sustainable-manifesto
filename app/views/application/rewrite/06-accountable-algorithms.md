@@ -1,8 +1,8 @@
-# Transparent algorithms
+# Accountable algorithms
 
 Algorithms influence opportunity, representation, and truth. Their impact must be understandable and open to challenge. Accountability means taking responsibility for how automated systems shape society, while clarity ensures that people can grasp and question the reasoning behind decisions that affect them.
 
-Transparent algorithms come to life when we:
+Accountable algorithms come to life when we:
 
 - **Make systems understandable.** Provide clear, accessible explanations of what an algorithm does, what data it uses, and how outcomes are determined.
 - **Expose decisions to scrutiny.** Enable independent testing, auditing, and feedback from those affected by automated processes.

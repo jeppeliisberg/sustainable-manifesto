@@ -7,5 +7,5 @@ Governance for the common good comes to life when we:
 - **Include those most affected.** Decisions should reflect the voices of users, workers, and communities impacted by technology.
 - **Practice participatory governance.** Use transparent, democratic methods to guide priorities and resolve conflicts.
 - **Design for accountability.** Make power visible and challengeable within organizational and technical structures.
-- **Foster long-term stewardship.** Encourage caretakers, not just owners — those who think in decades, not quarters.
+- **Foster long-term stewardship.** Foster long-term stewardship. Encourage caretakers, not just owners, who think in decades rather than quarters.
 - **Align governance with values.** Ensure that sustainability, justice, and wellbeing remain the compass for every decision.

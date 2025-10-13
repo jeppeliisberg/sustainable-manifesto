@@ -1,6 +1,6 @@
-# Data soverignty
+# Data sovereignty
 
-Data is not a resource to be mined — it is a trace of people’s lives. Respecting privacy means respecting autonomy and trust. Sustainable systems give individuals real control over their data and minimize what is collected in the first place.
+Data is not a resource to be mined. It represents people’s lives and choice and, as such, it belongs to them. Respecting privacy means respecting autonomy and trust. Sustainable systems give individuals real control over their data and minimize what is collected in the first place.
 
 Data sovereignty comes to life when we:
 

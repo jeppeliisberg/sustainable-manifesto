@@ -1,6 +1,6 @@
 # Enduring design
 
-Software that endures helps both people and the planet. When systems are designed to last, they reduce exclusion, limit waste, and remain usable across devices and contexts. Efficiency ensures that resources — from energy to attention — are not squandered. Together, they form the foundation of sustainable digital infrastructure.
+Software that endures helps both people and the planet. When systems are designed to last, they reduce exclusion, limit waste, and remain usable across devices and contexts. Efficiency ensures that resources, like energy and attention, are not squandered.
 
 Enduring design comes to life when we:
 
