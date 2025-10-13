@@ -1,12 +1,52 @@
-<footer class="mx-auto px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
-  <div class="mt-24 border-t border-gray-900/10 pt-12">
-    <div class="text-center">
-      <h2 class="text-base/7 font-semibold text-teal-600">Looking Further</h2>
-      <p class="mt-2 text-balance text-2xl font-semibold text-gray-900 dark:text-gray-300 sm:text-3xl">We are Standing on the Shoulders of Giants</p>
-      <p class="mt-4 text-pretty text-base/7 text-gray-600 dark:text-gray-400">The Sustainable Software Manifesto is built on collective wisdom.</p>
-      <div class="mt-6">
-        <a href="/resources" class="rounded-md bg-teal-600 px-3.5 py-2.5 text-sm font-semibold text-white dark:text-gray-200 shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">View Resources and Acknowledgments</a>
+<footer class="bg-gray-50 dark:bg-slate-950/50" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <div class="space-y-8">
+        <h3 class="text-2xl font-semibold text-gray-900 dark:text-gray-200">Sustainable Software Manifesto</h3>
+        <p class="text-sm/6 text-gray-600 dark:text-gray-400">A commitment to align digital systems with the needs of a thriving world.</p>
+        <div class="flex space-x-6">
+          </div>
       </div>
+      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-gray-100">Navigation</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li><a href="<%= root_path %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Home</a></li>
+              <li><a href="<%= resources_path %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Resources</a></li>
+              <li><a href="<%= signatures_path %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Signatures</a></li>
+            </ul>
+          </div>
+          <div class="mt-10 md:mt-0">
+            <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-gray-100">Get Involved</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li><a href="<%= sign_path %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Sign the Manifesto</a></li>
+              <li><a href="https://zensocial.online/circles/empowering-digital-communities" target="_blank" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Join the Conversation</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-sm/6 font-semibold text-gray-900 dark:text-gray-100">Principles</h3>
+          <ul role="list" class="mt-6 space-y-4">
+            <li><a href="<%= principle_path('lower-environmental-impact') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Lower environmental impact</a></li>
+            <li><a href="<%= principle_path('enduring-design') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Enduring design</a></li>
+            <li><a href="<%= principle_path('human-wellbeing') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Human wellbeing</a></li>
+            <li><a href="<%= principle_path('inclusive-creation') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Inclusive creation</a></li>
+            <li><a href="<%= principle_path('data-sovereignity') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Data sovereignty</a></li>
+            <li><a href="<%= principle_path('transparent-algorithms') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Transparent algorithms</a></li>
+            <li><a href="<%= principle_path('fair-labor') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Fair labor</a></li>
+            <li><a href="<%= principle_path('open-infrastructure') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Open infrastructure</a></li>
+            <li><a href="<%= principle_path('collaborative-development') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Collaborative development</a></li>
+            <li><a href="<%= principle_path('governance-for-the-common-good') %>" class="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-200">Governance for the common good</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mt-16 border-t border-gray-900/10 dark:border-gray-200/10 pt-8 sm:mt-20 lg:mt-24">
+      <p class="text-xs/5 text-gray-500 dark:text-gray-400">
+        A collaboration by Jeppe Liisberg, Stefano Romanelli, and dedicated volunteers, with support from the <a href="https://nordicmedialab.dk" target="_blank" class="font-semibold text-teal-600 hover:text-teal-500">Nordic Media Lab</a>.
+      </p>
     </div>
   </div>
 </footer>
