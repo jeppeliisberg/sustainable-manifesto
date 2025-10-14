@@ -12,6 +12,10 @@ class Signature < ApplicationRecord
     confirmed_at.present?
   end
 
+  def signed?
+    signed_at.present?
+  end
+
   def can_resend_code?
     confirmation_code_sent_at.nil? || confirmation_code_sent_at < 1.minute.ago
   end
@@ -35,7 +39,7 @@ class Signature < ApplicationRecord
     domain = email_domain
     existing = Signature.where(signature_type: :organization)
                        .where.not(id: id)
-                       .find { |sig| sig.email_domain == domain && sig.confirmed? }
+                       .find { |sig| sig.email_domain == domain && sig.signed? }
 
     if existing
       errors.add(:email, "Your organization has already signed the manifesto.")

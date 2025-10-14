@@ -1,6 +1,8 @@
 <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">Tell us a bit more</h2>
 
 <%= form_with model: signature, url: signature_path(signature), method: :patch, data: { turbo_frame: "signature_form" } do |f| %>
+  <input type="hidden" name="current_step" value="details" />
+
   <div class="mb-4">
     <label for="signature_title" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
       Job Title <span class="text-gray-500 dark:text-gray-400 font-normal">(optional)</span>
@@ -29,5 +31,6 @@
 <% end %>
 
 <div class="text-center">
-  <%= link_to "Go back", root_path, class: "text-sm text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100", data: { turbo_frame: "_top" } %>
+  <% prev = previous_step(:details) %>
+  <%= link_to "Go back", prev ? edit_signature_path(signature, step: prev) : root_path, class: "text-sm text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100" %>
 </div>

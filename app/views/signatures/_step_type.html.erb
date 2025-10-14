@@ -7,6 +7,8 @@
 <% end %>
 
 <%= form_with model: signature, url: signature_path(signature), method: :patch, data: { turbo_frame: "signature_form" } do |f| %>
+  <input type="hidden" name="current_step" value="signature_type" />
+
   <div class="space-y-4 mb-6">
     <label class="flex items-center p-4 border-2 border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer hover:border-teal-500 dark:hover:border-teal-400 transition-colors">
       <%= f.radio_button :signature_type, "individual", class: "w-4 h-4 text-teal-600 focus:ring-teal-500", checked: signature.individual? %>
