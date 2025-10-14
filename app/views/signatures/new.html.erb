@@ -43,11 +43,9 @@
                   max-width: none !important;
                 }
               </style>
-              <div class="overflow-hidden rounded-lg border border-gray-300 dark:border-gray-600">
-                <div class="cf-turnstile"
-                     data-sitekey="<%= Rails.application.credentials.dig(:turnstile, :site_key) %>"
-                     data-turnstile-target="widget"></div>
-              </div>
+              <div class="cf-turnstile"
+                   data-sitekey="<%= Rails.application.credentials.dig(:turnstile, :site_key) %>"
+                   data-turnstile-target="widget"></div>
             </div>
           <% end %>
 
