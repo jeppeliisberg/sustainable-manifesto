@@ -32,18 +32,23 @@
           <% if Rails.env.test? %>
             <input type="hidden" name="cf-turnstile-response" value="test-token" />
           <% else %>
-            <div class="mb-4" data-controller="turnstile">
+            <div class="mb-4 w-full" data-controller="turnstile">
               <style>
+                [data-controller="turnstile"] {
+                  width: 100% !important;
+                }
                 .cf-turnstile {
                   width: 100% !important;
+                  display: block !important;
                 }
                 .cf-turnstile > div,
                 .cf-turnstile iframe {
                   width: 100% !important;
                   max-width: none !important;
+                  display: block !important;
                 }
               </style>
-              <div class="cf-turnstile"
+              <div class="cf-turnstile w-full"
                    data-sitekey="<%= Rails.application.credentials.dig(:turnstile, :site_key) %>"
                    data-turnstile-target="widget"></div>
             </div>
