@@ -22,7 +22,9 @@ export default class extends Controller {
         // Render new widget and store its ID
         const sitekey = this.widgetTarget.getAttribute('data-sitekey')
         const newWidgetId = turnstile.render(this.widgetTarget, {
-          sitekey: sitekey
+          sitekey: sitekey,
+          size: 'flexible',
+          theme: 'auto'
         })
         this.widgetTarget.setAttribute('data-widget-id', newWidgetId)
       }
