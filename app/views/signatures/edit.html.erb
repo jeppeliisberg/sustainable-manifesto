@@ -1,14 +1,14 @@
 <%= turbo_frame_tag "signature_form" do %>
   <div class="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg max-w-md mx-auto">
     <% case @current_step %>
-    <% when :name %>
-      <%= render "step_name", signature: @signature %>
     <% when :signature_type %>
       <%= render "step_type", signature: @signature %>
-    <% when :individual_details %>
-      <%= render "step_individual_details", signature: @signature %>
-    <% when :organization_details %>
-      <%= render "step_organization_details", signature: @signature %>
+    <% when :details %>
+      <% if @signature.individual? %>
+        <%= render "step_individual_details", signature: @signature %>
+      <% else %>
+        <%= render "step_organization_details", signature: @signature %>
+      <% end %>
     <% else %>
       <%= render "success", signature: @signature %>
     <% end %>

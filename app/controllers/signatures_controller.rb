@@ -2,12 +2,14 @@ class SignaturesController < ApplicationController
   before_action :load_signature_from_session, only: [ :verify, :confirm, :resend_code ]
   before_action :load_signature_from_id, only: [ :edit, :update ]
 
-  def index
-    @individual_count = Signature.where(signature_type: :individual).where.not(confirmed_at: nil).count
-    @organization_count = Signature.where(signature_type: :organization).where.not(confirmed_at: nil).count
+  helper_method :previous_step
 
-    confirmed_signatures = Signature.where.not(confirmed_at: nil).order(created_at: :desc)
-    @pagy, @signatures = pagy(confirmed_signatures, items: 50)
+  def index
+    @individual_count = Signature.where(signature_type: :individual).where.not(signed_at: nil).count
+    @organization_count = Signature.where(signature_type: :organization).where.not(signed_at: nil).count
+
+    signed_signatures = Signature.where.not(signed_at: nil).order(created_at: :desc)
+    @pagy, @signatures = pagy(signed_signatures, items: 50)
   end
 
   def new
@@ -25,11 +27,22 @@ class SignaturesController < ApplicationController
 
     @signature = Signature.find_or_initialize_by(email: signature_params[:email])
 
-    if @signature.confirmed?
-      render :new, status: :unprocessable_entity, locals: { error: "This email has already been confirmed." }
+    # Check if already fully signed
+    if @signature.signed?
+      render :new, status: :unprocessable_entity, locals: { error: "You've already signed the manifesto. Email us if you need to update your signature." }
       return
     end
 
+    # If confirmed but not signed, allow resume
+    if @signature.confirmed?
+      @signature.send_confirmation_code!
+      session[:signature_id] = @signature.id
+      redirect_to verify_signatures_path, notice: "We've sent a verification code to continue your signature."
+      return
+    end
+
+    # New signature - save name and send verification
+    @signature.assign_attributes(signature_params)
     if @signature.save
       @signature.send_confirmation_code!
       session[:signature_id] = @signature.id
@@ -72,8 +85,8 @@ class SignaturesController < ApplicationController
       return
     end
 
-    # Determine which step to show based on what's missing
-    @current_step = determine_current_step(@signature)
+    # Determine which step to show based on URL param or default
+    @current_step = params[:step]&.to_sym || default_step(@signature)
   end
 
   def update
@@ -82,29 +95,22 @@ class SignaturesController < ApplicationController
       return
     end
 
-    # Store the current step before updating
-    current_step_before_update = determine_current_step(@signature)
+    current_step = params[:current_step]&.to_sym
 
     if @signature.update(update_signature_params)
-      # Special handling: if this was the individual details step, we're done
-      # (all individual fields are optional, so any submission completes the flow)
-      if current_step_before_update == :individual_details
+      # Determine next step
+      next_step = next_step_after(current_step, @signature)
+
+      if next_step == :complete
+        # Final step - mark as signed
+        @signature.update(signed_at: Time.current)
         render :success
-        return
-      end
-
-      # For other steps, check if we need to show another step
-      current_step_after_update = determine_current_step(@signature)
-
-      # If we're still on a step (not complete), redirect back to continue the flow
-      if current_step_after_update != :complete
-        redirect_to edit_signature_path(@signature)
       else
-        # All required steps complete, show success
-        render :success
+        # Move to next step
+        redirect_to edit_signature_path(@signature, step: next_step)
       end
     else
-      @current_step = current_step_before_update
+      @current_step = current_step
       render :edit, status: :unprocessable_entity
     end
   end
@@ -129,7 +135,7 @@ class SignaturesController < ApplicationController
   private
 
   def signature_params
-    params.require(:signature).permit(:email)
+    params.require(:signature).permit(:email, :name)
   end
 
   def update_signature_params
@@ -144,18 +150,28 @@ class SignaturesController < ApplicationController
     @signature = Signature.find(params[:id])
   end
 
-  def determine_current_step(signature)
-    return :name if signature.name.blank?
-    return :signature_type if signature.signature_type.nil?
-    # For individuals, always show details step (fields are optional)
-    # For organizations, show details step until required fields are filled
-    return :individual_details if signature.individual?
-    return :organization_details if signature.organization? && signature_incomplete_organization?(signature)
-    :complete
+  def default_step(signature)
+    # Always start at type selection - we show all steps now
+    :signature_type
   end
 
-  def signature_incomplete_organization?(signature)
-    # For organizations, require organization name and profile URL
-    signature.organization.blank? || signature.profile_url.blank?
+  def next_step_after(current_step, signature)
+    case current_step
+    when :signature_type
+      :details
+    when :details
+      :complete
+    else
+      :signature_type
+    end
+  end
+
+  def previous_step(current_step)
+    case current_step
+    when :details
+      :signature_type
+    else
+      nil # No previous step, go to root
+    end
   end
 end

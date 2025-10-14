@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_13_162546) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_13_201829) do
   create_table "signatures", force: :cascade do |t|
     t.string "name"
     t.string "email", null: false
@@ -23,8 +23,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_13_162546) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "confirmation_code_sent_at"
+    t.datetime "signed_at"
     t.index ["confirmation_token"], name: "index_signatures_on_confirmation_token", unique: true
-    t.index ["confirmed_at", "created_at"], name: "index_signatures_on_confirmed_at_and_created_at"
     t.index ["email"], name: "index_signatures_on_email", unique: true
+    t.index ["signed_at", "created_at"], name: "index_signatures_on_signed_at_and_created_at"
+    t.index ["signed_at"], name: "index_signatures_on_signed_at"
   end
 end

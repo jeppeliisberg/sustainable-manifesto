@@ -38,13 +38,24 @@ class SignaturesControllerTest < ActionDispatch::IntegrationTest
     assert_not_equal old_token, existing.confirmation_token
   end
 
-  test "create shows error for already confirmed signature" do
+  test "create allows resume for confirmed but not signed signature" do
     Signature.create!(email: "confirmed@example.com", confirmed_at: Time.current)
 
-    post signatures_path, params: { signature: { email: "confirmed@example.com" }, "cf-turnstile-response" => "token" }
+    assert_emails 1 do
+      post signatures_path, params: { signature: { email: "confirmed@example.com" }, "cf-turnstile-response" => "token" }
+    end
+
+    assert_redirected_to verify_signatures_path
+    assert_match /continue your signature/i, flash[:notice]
+  end
+
+  test "create shows error for already signed signature" do
+    Signature.create!(email: "signed@example.com", confirmed_at: Time.current, signed_at: Time.current)
+
+    post signatures_path, params: { signature: { email: "signed@example.com" }, "cf-turnstile-response" => "token" }
 
     assert_response :unprocessable_entity
-    assert_match /already been confirmed/i, response.body
+    assert_match /already signed/i, response.body
   end
 
   test "verify renders code entry form" do

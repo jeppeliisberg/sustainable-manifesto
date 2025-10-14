@@ -99,8 +99,8 @@ class SignatureTest < ActiveSupport::TestCase
     assert signature2.valid?
   end
 
-  test "organization domain uniqueness prevents confirmed organization from same domain" do
-    Signature.create!(email: "org1@example.com", signature_type: :organization, confirmed_at: Time.current)
+  test "organization domain uniqueness prevents signed organization from same domain" do
+    Signature.create!(email: "org1@example.com", signature_type: :organization, confirmed_at: Time.current, signed_at: Time.current)
     signature2 = Signature.new(email: "org2@example.com", signature_type: :organization)
     assert_not signature2.valid?
     assert_includes signature2.errors[:email], "Your organization has already signed the manifesto."
