@@ -33,6 +33,16 @@
             <input type="hidden" name="cf-turnstile-response" value="test-token" />
           <% else %>
             <div class="mb-4" data-controller="turnstile">
+              <style>
+                .cf-turnstile {
+                  width: 100% !important;
+                }
+                .cf-turnstile > div,
+                .cf-turnstile iframe {
+                  width: 100% !important;
+                  max-width: none !important;
+                }
+              </style>
               <div class="overflow-hidden rounded-lg border border-gray-300 dark:border-gray-600">
                 <div class="cf-turnstile"
                      data-sitekey="<%= Rails.application.credentials.dig(:turnstile, :site_key) %>"
