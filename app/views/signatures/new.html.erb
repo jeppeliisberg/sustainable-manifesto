@@ -11,6 +11,13 @@
           </div>
         <% end %>
 
+        <% if local_assigns[:show_contact_link] == true %>
+          <p class="text-center text-sm text-gray-600 dark:text-gray-300 -mt-2 mb-6">
+            Need to update or remove your signature?
+            <%= link_to "Contact us", contact_path(email: @signature.email, name: @signature.name), class: "font-medium text-teal-600 hover:text-teal-500", data: { turbo_frame: "_top" } %>
+          </p>
+        <% end %>
+
         <%= form_with model: @signature, url: signatures_path, method: :post, data: { turbo_frame: "signature_form", controller: "turnstile" } do |f| %>
           <div class="mb-4">
             <label for="signature_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
