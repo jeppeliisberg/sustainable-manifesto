@@ -1,0 +1,73 @@
+<div class="px-6 py-16 lg:px-8">
+  <div class="mx-auto max-w-3xl text-base/7">
+    <div class="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg max-w-md mx-auto">
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Contact Us</h1>
+      <p class="text-gray-600 dark:text-gray-300 mb-6">Need to update or remove your signature? Let us know.</p>
+
+      <% if local_assigns[:error] %>
+        <div class="bg-red-50 dark:bg-red-900/50 border border-red-200 dark:border-red-700 text-red-800 dark:text-red-200 px-4 py-3 rounded mb-4">
+          <%= error %>
+        </div>
+      <% end %>
+
+      <%= form_with url: contact_path, method: :post, data: { controller: "turnstile" } do |f| %>
+        <div class="mb-4">
+          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Full Name
+          </label>
+          <%= text_field_tag :name, @name, required: true, class: "w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-slate-700 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent", placeholder: "Jane Doe" %>
+        </div>
+
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Email Address
+          </label>
+          <%= email_field_tag :email, @email, required: true, class: "w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-slate-700 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent", placeholder: "your@email.com" %>
+          <p class="mt-2 text-xs text-gray-500 dark:text-gray-400">
+            Please use the same email you used to sign the manifesto.
+          </p>
+        </div>
+
+        <div class="mb-4">
+          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Message
+          </label>
+          <%= text_area_tag :message, @message, required: true, rows: 4, class: "w-full px-4 py-2 border border-gray-300 dark:border-gray-600 dark:bg-slate-700 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent", placeholder: "Please update my title to..." %>
+        </div>
+
+        <% if Rails.env.test? %>
+          <input type="hidden" name="cf-turnstile-response" value="test-token" />
+        <% else %>
+          <div class="mb-4 w-full" data-controller="turnstile">
+            <style>
+              [data-controller="turnstile"] {
+                width: 100% !important;
+              }
+              .cf-turnstile {
+                width: 100% !important;
+                display: block !important;
+              }
+              .cf-turnstile > div,
+              .cf-turnstile iframe {
+                width: 100% !important;
+                max-width: none !important;
+                display: block !important;
+              }
+            </style>
+            <div class="cf-turnstile w-full"
+                 data-sitekey="<%= Rails.application.credentials.dig(:turnstile, :site_key) %>"
+                 data-turnstile-target="widget"></div>
+          </div>
+        <% end %>
+
+        <div class="mb-4">
+          <%= submit_tag "Send Message", class: "w-full bg-teal-600 text-white dark:text-gray-100 px-6 py-2 rounded-lg hover:bg-teal-700 transition-colors cursor-pointer text-center" %>
+        </div>
+      <% end %>
+
+      <div class="text-center">
+        <%= link_to "Go back", root_path, class: "text-sm text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100", data: { turbo_frame: "_top" } %>
+      </div>
+    </div>
+  </div>
+</div>

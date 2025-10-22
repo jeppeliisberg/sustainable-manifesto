@@ -29,7 +29,10 @@ class SignaturesController < ApplicationController
 
     # Check if already fully signed
     if @signature.signed?
-      render :new, status: :unprocessable_entity, locals: { error: "You've already signed the manifesto. Email us if you need to update your signature." }
+      render :new, status: :unprocessable_entity, locals: {
+        error: "You've already signed the manifesto.",
+        show_contact_link: true
+      }
       return
     end
 

@@ -36,5 +36,8 @@
       <%= yield %>
     </main>
     <%= render "layouts/footer" %>
+    <% unless Rails.env.test? %>
+      <%= content_tag :script, nil, src: "https://challenges.cloudflare.com/turnstile/v0/api.js", async: true, defer: true %>
+    <% end %>
   </body>
 </html>

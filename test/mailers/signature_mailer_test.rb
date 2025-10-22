@@ -14,7 +14,7 @@ class SignatureMailerTest < ActionMailer::TestCase
     end
 
     assert_equal [ "test@example.com" ], email.to
-    assert_equal "Verify your email for Sustainable Software Manifesto", email.subject
+    assert_equal "Your Sustainable Software Manifesto verification code", email.subject
     assert_match expected_code, email.body.encoded
     assert_match "verify your email", email.body.encoded.downcase
   end

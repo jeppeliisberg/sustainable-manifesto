@@ -36,4 +36,9 @@ Rails.application.routes.draw do
       get :resend_code
     end
   end
+
+  # Contact form
+  get "contact", to: "contacts#new", as: :contact
+  post "contact", to: "contacts#create"
+  get "contact/success", to: "contacts#success", as: :contact_success
 end
