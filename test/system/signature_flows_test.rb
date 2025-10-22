@@ -10,7 +10,7 @@ class SignatureFlowsTest < ApplicationSystemTestCase
     visit sign_path
 
     # Step 1: Enter name and email
-    fill_in "Your Name", with: "Jane Doe"
+    fill_in "Full Name", with: "Jane Doe"
     fill_in "Email Address", with: "jane@example.com"
     click_button "Continue"
 
@@ -45,7 +45,7 @@ class SignatureFlowsTest < ApplicationSystemTestCase
     visit sign_path
 
     # Step 1: Enter name and email
-    fill_in "Your Name", with: "John Smith"
+    fill_in "Full Name", with: "John Smith"
     fill_in "Email Address", with: "john@acme.com"
     click_button "Continue"
 
@@ -81,7 +81,7 @@ class SignatureFlowsTest < ApplicationSystemTestCase
     visit sign_path
 
     # Complete step 1
-    fill_in "Your Name", with: "Test User"
+    fill_in "Full Name", with: "Test User"
     fill_in "Email Address", with: "test@example.com"
     click_button "Continue"
 
@@ -124,7 +124,7 @@ class SignatureFlowsTest < ApplicationSystemTestCase
 
     # Try to sign again with same email
     visit sign_path
-    fill_in "Your Name", with: "Existing User"
+    fill_in "Full Name", with: "Existing User"
     fill_in "Email Address", with: "existing@example.com"
     click_button "Continue"
 
@@ -164,7 +164,7 @@ class SignatureFlowsTest < ApplicationSystemTestCase
     )
 
     visit sign_path
-    fill_in "Your Name", with: "Already Signed"
+    fill_in "Full Name", with: "Already Signed"
     fill_in "Email Address", with: "signed@example.com"
     click_button "Continue"
 
