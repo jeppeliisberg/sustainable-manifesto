@@ -7,7 +7,7 @@ class SignatureMailer < ApplicationMailer
 
     mail(
       to: signature.email,
-      subject: "Verify your email for Sustainable Software Manifesto"
+      subject: "Your Sustainable Software Manifesto verification code"
     )
   end
 end
