@@ -76,4 +76,4 @@ group :test do
   gem "mocha"
 end
 
-gem "tailwindcss-rails", "~> 4.0"
+gem "tailwindcss-rails", "~> 4.4"
