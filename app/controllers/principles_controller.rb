@@ -7,7 +7,7 @@ class PrinciplesController < ApplicationController
     enduring-design
     human-wellbeing
     inclusive-creation
-    data-sovereignity
+    data-sovereignty
     transparent-algorithms
     fair-labor
     open-infrastructure

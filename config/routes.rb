@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get "/reflection", to: redirect("/principles/human-wellbeing", status: 301)
   get "/inclusivity", to: redirect("/principles/inclusive-creation", status: 301)
   get "/empowerment", to: redirect("/principles/open-infrastructure", status: 301)
-  get "/privacy", to: redirect("/principles/data-sovereignity", status: 301)
+  get "/privacy", to: redirect("/principles/data-sovereignty", status: 301)
   get "/transparency", to: redirect("/principles/transparent-algorithms", status: 301)
   get "/climate", to: redirect("/principles/lower-environmental-impact", status: 301)
   get "/shared-value", to: redirect("/principles/governance-for-the-common-good", status: 301)
