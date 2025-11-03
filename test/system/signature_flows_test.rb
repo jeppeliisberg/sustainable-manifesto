@@ -33,7 +33,7 @@ class SignatureFlowsTest < ApplicationSystemTestCase
     # Step 3: Individual details
     assert_text "Tell us a bit more"
     fill_in "Job Title", with: "Software Engineer"
-    click_button "Sign the Manifesto"
+    click_button "Sign the manifesto"
 
     # Success
     assert_text "Thank you for signing"
@@ -68,7 +68,7 @@ class SignatureFlowsTest < ApplicationSystemTestCase
     assert_text "Organization details"
     fill_in "Organization Name", with: "Acme Corp"
     fill_in "Organization Website", with: "https://acme.com"
-    click_button "Sign the Manifesto"
+    click_button "Sign the manifesto"
 
     # Success
     assert_text "Thank you for signing"
@@ -147,7 +147,7 @@ class SignatureFlowsTest < ApplicationSystemTestCase
     # Complete flow
     choose "Individual"
     click_button "Continue"
-    click_button "Sign the Manifesto"
+    click_button "Sign the manifesto"
 
     assert_text "Thank you for signing"
     signature.reload
