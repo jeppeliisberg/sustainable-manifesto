@@ -15,7 +15,7 @@ class SignatureFlowsTest < ApplicationSystemTestCase
     click_button "Continue"
 
     # Verify email step - wait for page to load
-    assert_text "Verification Code"
+    assert_text "Verification code"
     signature = Signature.find_by(email: "jane@example.com")
     code = signature.confirmation_token[0, 6]
 
