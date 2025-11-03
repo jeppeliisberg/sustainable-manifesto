@@ -1,6 +1,6 @@
 # Project Overview
 
-[cite\_start]This is a Ruby on Rails 8 application for the **Sustainable Software Manifesto**, deployed as `sustainablemanifesto.org`[cite: 336]. The application serves as a content-focused platform for a software development manifesto.
+[cite\_start]This is a Ruby on Rails 8 application for the **sustainable software manifesto**, deployed as `sustainablemanifesto.org`[cite: 336]. The application serves as a content-focused platform for a software development manifesto.
 
 When editing code, follow The Rails Way. Favor conventions over abstractions. Use ERB partials for UI elements, Turbo + Stimulus for interactivity, and Tailwind for styling. Do not add React or other frontend frameworks. Avoid introducing new gems unless explicitly instructed. [cite\_start]Javascript libraries are imported using `importmap`[cite: 3, 419].
 

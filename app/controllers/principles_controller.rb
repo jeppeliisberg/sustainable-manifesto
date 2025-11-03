@@ -52,7 +52,7 @@ class PrinciplesController < ApplicationController
   def extract_title(content)
     # Extract first heading (# Title)
     match = content.match(/^#\s+(.+)$/)
-    match ? match[1] : "Sustainable Software Manifesto"
+    match ? match[1] : "Sustainable software manifesto"
   end
 
   def extract_description(content)
