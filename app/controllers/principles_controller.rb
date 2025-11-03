@@ -103,7 +103,7 @@ class PrinciplesController < ApplicationController
       def paragraph(text)
         if @first_paragraph
           @first_paragraph = false
-          %(<p class="mt-6 text-xl/8">#{text}</p>)
+          %(<p class="mt-6">#{text}</p>)
         else
           %(<p class="mt-8">#{text}</p>)
         end
