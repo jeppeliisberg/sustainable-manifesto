@@ -1,6 +1,6 @@
-# Sustainable Software Manifesto
+# Sustainable software manifesto
 
-A Ruby on Rails 8 application for the Sustainable Software Manifesto, deployed as `sustainablemanifesto.org`.
+A Ruby on Rails 8 application for the sustainable software manifesto, deployed as `sustainablemanifesto.org`.
 
 ## Tech Stack
 

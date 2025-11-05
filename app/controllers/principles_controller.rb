@@ -7,7 +7,7 @@ class PrinciplesController < ApplicationController
     enduring-design
     human-wellbeing
     inclusive-creation
-    data-sovereignity
+    data-sovereignty
     transparent-algorithms
     fair-labor
     open-infrastructure
@@ -52,7 +52,7 @@ class PrinciplesController < ApplicationController
   def extract_title(content)
     # Extract first heading (# Title)
     match = content.match(/^#\s+(.+)$/)
-    match ? match[1] : "Sustainable Software Manifesto"
+    match ? match[1] : "Sustainable software manifesto"
   end
 
   def extract_description(content)
@@ -103,7 +103,7 @@ class PrinciplesController < ApplicationController
       def paragraph(text)
         if @first_paragraph
           @first_paragraph = false
-          %(<p class="mt-6 text-xl/8">#{text}</p>)
+          %(<p class="mt-6">#{text}</p>)
         else
           %(<p class="mt-8">#{text}</p>)
         end
