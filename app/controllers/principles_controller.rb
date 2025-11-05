@@ -115,7 +115,7 @@ class PrinciplesController < ApplicationController
       end
 
       def list_item(text, list_type)
-        %(<li class="flex gap-x-3"><span class="text-teal-600 font-bold text-xl flex-none" style="width: 1.25rem; margin-top: 0.125rem;">•</span><span>#{text}</span></li>)
+        %(<li class="flex gap-x-3"><span class="text-teal-600 font-bold text-4xl/6 flex-none">•</span><span>#{text}</span></li>)
       end
 
       def link(link, title, content)
