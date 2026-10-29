@@ -9,7 +9,7 @@ class SignaturesController < ApplicationController
     @organization_count = Signature.where(signature_type: :organization).where.not(signed_at: nil).count
 
     signed_signatures = Signature.where.not(signed_at: nil).order(created_at: :desc)
-    @pagy, @signatures = pagy(signed_signatures, items: 50)
+    @pagy, @signatures = pagy(signed_signatures, limit: 50)
   end
 
   def new

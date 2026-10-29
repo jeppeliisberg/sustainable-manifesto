@@ -111,4 +111,39 @@ class SignaturesControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
     assert_match /security verification/i, response.body
   end
+
+  test "index shows 50 signatures per page with a load more link" do
+    create_signed_signatures(60)
+
+    get signatures_path
+
+    assert_response :success
+    assert_select "p", text: /Signer \d{3}/, count: 50
+    assert_select "a.pagy-nav[rel=next][href=?]", signatures_path(page: 2), text: "Load more"
+  end
+
+  test "index last page shows remaining signatures without load more link" do
+    create_signed_signatures(60)
+
+    get signatures_path(page: 2)
+
+    assert_response :success
+    assert_select "p", text: /Signer \d{3}/, count: 10
+    assert_select "p", text: "Signer 051"
+    assert_select "a.pagy-nav", count: 0
+  end
+
+  private
+
+  def create_signed_signatures(count)
+    count.times do |i|
+      Signature.create!(
+        email: "signer#{i}@example.com",
+        name: format("Signer %03d", count - i),
+        signature_type: :individual,
+        signed_at: Time.current,
+        created_at: (count - i).minutes.ago
+      )
+    end
+  end
 end
