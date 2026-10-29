@@ -21,7 +21,7 @@ export default class extends Controller {
   }
 
   loadMore() {
-    const pagyLink = this.element.querySelector(".pagy-nav a[rel='next']")
+    const pagyLink = this.element.querySelector("a.pagy-nav[rel='next']")
     if (pagyLink) {
       pagyLink.click()
     }

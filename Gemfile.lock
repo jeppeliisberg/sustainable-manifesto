@@ -91,6 +91,9 @@ GEM
     brakeman (8.1.0)
       racc
     builder (3.3.0)
+    bundler-audit (0.9.3)
+      bundler (>= 1.2.0)
+      thor (~> 1.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -418,6 +421,7 @@ DEPENDENCIES
   actionpack-page_caching
   bootsnap
   brakeman
+  bundler-audit
   capybara
   debug
   importmap-rails
