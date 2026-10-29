@@ -19,15 +19,16 @@
       </div>
     </div>
 
-    <div class="mt-12 space-y-4">
+    <%# Each page lives in its own frame; "Load more" fills the next page's frame with that page's records and link %>
+    <%= turbo_frame_tag "signatures_page_#{@pagy.page}", class: "mt-12 block space-y-4" do %>
       <%= render @signatures %>
-    </div>
 
-    <%= turbo_frame_tag "pagination", data: { controller: "infinite-scroll" } do %>
       <% if @pagy.next %>
-        <div class="mt-6 text-center">
-          <%= link_to "Load more", signatures_path(page: @pagy.next), class: "pagy-nav", data: { turbo_frame: "pagination", turbo_action: "advance" }, rel: "next" %>
-        </div>
+        <%= turbo_frame_tag "signatures_page_#{@pagy.next}", class: "block space-y-4" do %>
+          <div class="pt-2 text-center" data-controller="infinite-scroll">
+            <%= link_to "Load more", signatures_path(page: @pagy.next), class: "pagy-nav", data: { turbo_frame: "signatures_page_#{@pagy.next}", turbo_action: "advance" }, rel: "next" %>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
