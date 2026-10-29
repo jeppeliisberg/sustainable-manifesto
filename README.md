@@ -5,7 +5,7 @@ A Ruby on Rails 8 application for the sustainable software manifesto, deployed a
 ## Tech Stack
 
 - **Ruby on Rails 8.0.1**
-- **Ruby 3.3.6**
+- **Ruby 3.3.13**
 - **SQLite** (production database)
 - **Hotwire** (Turbo + Stimulus)
 - **Tailwind CSS 4.0**
@@ -16,7 +16,7 @@ A Ruby on Rails 8 application for the sustainable software manifesto, deployed a
 
 ### Prerequisites
 
-- Ruby 3.3.6
+- Ruby 3.3.13
 - Bundler
 
 ### Setup
