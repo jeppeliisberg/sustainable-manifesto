@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include Pagy::Backend
+  include Pagy::Method
 
   # Require browser support for import maps, which is the foundation for our JavaScript architecture.
   # These are the minimum versions that support import maps natively.

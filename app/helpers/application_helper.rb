@@ -1,6 +1,4 @@
 module ApplicationHelper
-  include Pagy::Frontend
-
   def nav_link_to(text, path)
     # Check if the current page is the path OR if we are on a principle page and the link is for the root path
     is_active = current_page?(path) || (controller_name == "principles" && path == root_path)
